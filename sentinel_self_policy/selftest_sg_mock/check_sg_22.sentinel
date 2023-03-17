@@ -1,0 +1,30 @@
+import "tfplan/v2" as tfplan
+
+aws_security_group = filter tfplan.resource_changes as _, rc {
+    rc.type is "aws_security_group" and 
+        (rc.change.actions contains "create" or rc.change.actions is ["update"])
+
+}
+
+disallowed_port = [
+    24,
+    81,
+    13,
+]
+
+sgr_port_policy = rule {
+    all aws_security_group as _, sg {
+        all sg.change.after.ingress as _, policy_ingress {
+            (policy_ingress.from_port not in disallowed_port ) and
+            (policy_ingress.to_port not in disallowed_port ) and
+            (all disallowed_port as _, disallow_range {(policy_ingress.from_port > disallow_range) or (policy_ingress.to_port < disallow_range)})
+            
+            
+        }
+    }
+
+}
+
+main = rule {
+    sgr_port_policy
+}

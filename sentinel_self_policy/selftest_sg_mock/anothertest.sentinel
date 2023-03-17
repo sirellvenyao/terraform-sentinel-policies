@@ -1,0 +1,65 @@
+import "tfplan/v2" as tfplan
+
+disallow_port_group = [
+	3389,
+	22,
+]
+
+
+aws_security_groups = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.mode is "managed" and
+		resource_changes.type is "aws_security_group" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"]) and
+		(resource_changes.change.after.ingress else []) is not empty
+}
+
+aws_security_group_rules = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.mode is "managed" and
+		resource_changes.type is "aws_security_group_rule" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"]) and
+		resource_changes.change.after.type is "ingress"
+}
+
+check_port_policy = func() {
+    for disallow_port_group as port {
+		port_security_groups = filter aws_security_groups as _, asg {
+			any asg.change.after.ingress as _, ingress {
+				ingress.to_port in port or
+					(ingress.from_port <= port and
+						ingress.to_port >= port)
+			}
+		}
+		
+		port_security_group_rules = filter aws_security_group_rules as _, asgr {
+			asgr.change.after.to_port is port or
+				(asgr.change.after.from_port <= port and
+					asgr.change.after.to_port >= port)
+		    }
+        }
+
+		deny_public_port_security_groups = rule {
+			all port_security_groups as _, rsg {
+				all rsg.change.after.ingress as _, ingress {
+					ingress.cidr_blocks not contains "0.0.0.0/0"
+				}
+			}
+		}
+		
+		deny_public_port_security_group_rules = rule {
+			all port_security_group_rules as _, rsgr {
+				rsgr.change.after.cidr_blocks not contains "0.0.0.0/0"
+			}
+		}
+
+        final_run_check = rule {
+            deny_public_port_security_groups and 
+            deny_public_port_security_group_rules
+        }
+
+    return final_run_check
+
+}
+a = check_port_policy()
+main = func{a}

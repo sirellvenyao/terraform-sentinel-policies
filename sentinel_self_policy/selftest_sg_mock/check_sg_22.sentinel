@@ -1,30 +1,37 @@
 import "tfplan/v2" as tfplan
 
-aws_security_group = filter tfplan.resource_changes as _, rc {
-    rc.type is "aws_security_group" and 
-        (rc.change.actions contains "create" or rc.change.actions is ["update"])
-
+aws_security_groups = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.mode is "managed" and
+		resource_changes.type is "aws_security_group" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"]) and
+		(resource_changes.change.after.ingress else []) is not empty
 }
 
-disallowed_port = [
-    24,
-    81,
-    13,
+disallow_port_group = [
+	3389,
+	22,
 ]
 
-sgr_port_policy = rule {
-    all aws_security_group as _, sg {
-        all sg.change.after.ingress as _, policy_ingress {
-            (policy_ingress.from_port not in disallowed_port ) and
-            (policy_ingress.to_port not in disallowed_port ) and
-            (all disallowed_port as _, disallow_range {(policy_ingress.from_port > disallow_range) or (policy_ingress.to_port < disallow_range)})
-            
-            
-        }
-    }
+get_port = func() {
+	for disallow_port_group as value {
+		print(value)
+		rdp_security_groups = filter aws_security_groups as _, asg {
+			any asg.change.after.ingress as _, ingress {
+				ingress.to_port in value or
+				(ingress.from_port <= [3389,100] and ingress.to_port >= [3389,100])
+			}
+
+		}
+	}
+	return 1
 
 }
 
-main = rule {
-    sgr_port_policy
-}
+
+
+
+
+a = get_port()
+
+main = rule{a}

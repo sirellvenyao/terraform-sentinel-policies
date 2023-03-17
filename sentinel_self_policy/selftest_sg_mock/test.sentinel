@@ -1,0 +1,15 @@
+find_all_variables = func() {
+	for [1,2,3] as value {
+		print(value)
+		return value
+		
+	}
+	
+  	
+}
+
+a = find_all_variables()
+
+main = rule{	
+	a
+}

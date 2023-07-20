@@ -1,0 +1,1658 @@
+terraform_version = "1.4.6"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"aws_iam_group.group": {
+			"address":        "aws_iam_group.group",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "group",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_iam_group",
+			"values": {
+				"name": "test-group",
+				"path": "/",
+			},
+		},
+		"aws_iam_group_policy_attachment.test-attach": {
+			"address":        "aws_iam_group_policy_attachment.test-attach",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "test-attach",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_iam_group_policy_attachment",
+			"values": {
+				"group":      "test-group",
+				"policy_arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+			},
+		},
+		"aws_iam_policy.policy_one": {
+			"address":        "aws_iam_policy.policy_one",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "policy_one",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_iam_policy",
+			"values": {
+				"description": null,
+				"name":        "policy-618033",
+				"path":        "/",
+				"policy":      "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+				"tags":        null,
+			},
+		},
+		"aws_iam_policy.policy_two": {
+			"address":        "aws_iam_policy.policy_two",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "policy_two",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_iam_policy",
+			"values": {
+				"description": null,
+				"name":        "policy-381966",
+				"path":        "/",
+				"policy":      "{\"Statement\":[{\"Action\":[\"s3:ListAllMyBuckets\",\"s3:ListBucket\",\"s3:HeadBucket\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+				"tags":        null,
+			},
+		},
+		"aws_iam_role.example": {
+			"address":        "aws_iam_role.example",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "example",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_iam_role",
+			"values": {
+				"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+				"description":           null,
+				"force_detach_policies": false,
+				"max_session_duration":  3600,
+				"name":                  "yak_role",
+				"path":                  "/",
+				"permissions_boundary":  null,
+				"tags":                  null,
+			},
+		},
+		"aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc": {
+			"address":        "aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "Ellventestssakvnkasicsk19230dklsc",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_s3_bucket",
+			"values": {
+				"bucket":        "Ellventestssakvnkasicsk19230dklsc",
+				"force_destroy": false,
+				"tags":          null,
+				"timeouts":      null,
+			},
+		},
+		"aws_s3_bucket.mytestssakvnkasicsk19230dklsc": {
+			"address":        "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "mytestssakvnkasicsk19230dklsc",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_s3_bucket",
+			"values": {
+				"acceleration_status": null,
+				"acl":                         null,
+				"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+				"bucket":                      "mytestssakvnkasicsk19230dklsc",
+				"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+				"bucket_prefix":               "",
+				"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+				"cors_rule":                   [],
+				"force_destroy":               false,
+				"grant": [
+					{
+						"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+						"permissions": [
+							"FULL_CONTROL",
+						],
+						"type": "CanonicalUser",
+						"uri":  "",
+					},
+				],
+				"hosted_zone_id":            "ZNB98KWMFR0R6",
+				"id":                        "mytestssakvnkasicsk19230dklsc",
+				"lifecycle_rule":            [],
+				"logging":                   [],
+				"object_lock_configuration": [],
+				"object_lock_enabled":       false,
+				"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+				"region":                    "ap-east-1",
+				"replication_configuration": [],
+				"request_payer":             "BucketOwner",
+				"server_side_encryption_configuration": [
+					{
+						"rule": [
+							{
+								"apply_server_side_encryption_by_default": [
+									{
+										"kms_master_key_id": "",
+										"sse_algorithm":     "AES256",
+									},
+								],
+								"bucket_key_enabled": false,
+							},
+						],
+					},
+				],
+				"tags":     {},
+				"tags_all": {},
+				"timeouts": null,
+				"versioning": [
+					{
+						"enabled":    false,
+						"mfa_delete": false,
+					},
+				],
+				"website":          [],
+				"website_domain":   null,
+				"website_endpoint": null,
+			},
+		},
+		"aws_s3_bucket_policy.Ellventestssakvnkasicsk19230dklsc": {
+			"address":        "aws_s3_bucket_policy.Ellventestssakvnkasicsk19230dklsc",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "Ellventestssakvnkasicsk19230dklsc",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_s3_bucket_policy",
+			"values": {
+				"policy": "{\"Id\":\"S3-Console-Auto-Gen-Policy-1670678796275\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"arn:aws:iam::891189580005:root\",\"arn:aws:iam::875537689616:root\",\"arn:aws:iam::555625778301:root\"]},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\"},{\"Action\":\"s3:GetBucketAcl\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::kucoin-cloudtrail-central\",\"Sid\":\"AWSCloudTrailAclCheck20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailWrite20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailS3Write20131101\"},{\"Action\":[\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::892535148939:role/arron\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"AWSCloudTrailReadOnly20230506\"}],\"Version\":\"2012-10-17\"}",
+			},
+		},
+		"aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc": {
+			"address":        "aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "mytestssakvnkasicsk19230dklsc",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_s3_bucket_policy",
+			"values": {
+				"bucket": "mytestssakvnkasicsk19230dklsc",
+				"id":     "mytestssakvnkasicsk19230dklsc",
+				"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+			},
+		},
+	},
+}
+
+variables = {
+	"aws": {
+		"name":  "aws",
+		"value": "ap-east-1",
+	},
+	"aws_region": {
+		"name":  "aws_region",
+		"value": "ap-east-1",
+	},
+	"awsvpc_service_subnetids": {
+		"name":  "awsvpc_service_subnetids",
+		"value": [],
+	},
+	"region": {
+		"name":  "region",
+		"value": "ap-east-1",
+	},
+}
+
+resource_changes = {
+	"aws_iam_group.group": {
+		"address": "aws_iam_group.group",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"name": "test-group",
+				"path": "/",
+			},
+			"after_unknown": {
+				"arn":       true,
+				"id":        true,
+				"unique_id": true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "group",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_iam_group",
+	},
+	"aws_iam_group_policy_attachment.test-attach": {
+		"address": "aws_iam_group_policy_attachment.test-attach",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"group":      "test-group",
+				"policy_arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+			},
+			"after_unknown": {
+				"id": true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "test-attach",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_iam_group_policy_attachment",
+	},
+	"aws_iam_policy.policy_one": {
+		"address": "aws_iam_policy.policy_one",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description": null,
+				"name":        "policy-618033",
+				"path":        "/",
+				"policy":      "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+				"tags":        null,
+			},
+			"after_unknown": {
+				"arn":         true,
+				"id":          true,
+				"name_prefix": true,
+				"policy_id":   true,
+				"tags_all":    true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "policy_one",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_iam_policy",
+	},
+	"aws_iam_policy.policy_two": {
+		"address": "aws_iam_policy.policy_two",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description": null,
+				"name":        "policy-381966",
+				"path":        "/",
+				"policy":      "{\"Statement\":[{\"Action\":[\"s3:ListAllMyBuckets\",\"s3:ListBucket\",\"s3:HeadBucket\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+				"tags":        null,
+			},
+			"after_unknown": {
+				"arn":         true,
+				"id":          true,
+				"name_prefix": true,
+				"policy_id":   true,
+				"tags_all":    true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "policy_two",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_iam_policy",
+	},
+	"aws_iam_role.example": {
+		"address": "aws_iam_role.example",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+				"description":           null,
+				"force_detach_policies": false,
+				"max_session_duration":  3600,
+				"name":                  "yak_role",
+				"path":                  "/",
+				"permissions_boundary":  null,
+				"tags":                  null,
+			},
+			"after_unknown": {
+				"arn":                 true,
+				"create_date":         true,
+				"id":                  true,
+				"inline_policy":       true,
+				"managed_policy_arns": true,
+				"name_prefix":         true,
+				"tags_all":            true,
+				"unique_id":           true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "example",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_iam_role",
+	},
+	"aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc": {
+		"address": "aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"bucket":        "Ellventestssakvnkasicsk19230dklsc",
+				"force_destroy": false,
+				"tags":          null,
+				"timeouts":      null,
+			},
+			"after_unknown": {
+				"acceleration_status": true,
+				"acl":                                  true,
+				"arn":                                  true,
+				"bucket_domain_name":                   true,
+				"bucket_prefix":                        true,
+				"bucket_regional_domain_name":          true,
+				"cors_rule":                            true,
+				"grant":                                true,
+				"hosted_zone_id":                       true,
+				"id":                                   true,
+				"lifecycle_rule":                       true,
+				"logging":                              true,
+				"object_lock_configuration":            true,
+				"object_lock_enabled":                  true,
+				"policy":                               true,
+				"region":                               true,
+				"replication_configuration":            true,
+				"request_payer":                        true,
+				"server_side_encryption_configuration": true,
+				"tags_all":                             true,
+				"versioning":                           true,
+				"website":                              true,
+				"website_domain":                       true,
+				"website_endpoint":                     true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "Ellventestssakvnkasicsk19230dklsc",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_s3_bucket",
+	},
+	"aws_s3_bucket.mytestssakvnkasicsk19230dklsc": {
+		"address": "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"acceleration_status": null,
+				"acl":                         null,
+				"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+				"bucket":                      "mytestssakvnkasicsk19230dklsc",
+				"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+				"bucket_prefix":               "",
+				"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+				"cors_rule":                   [],
+				"force_destroy":               false,
+				"grant": [
+					{
+						"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+						"permissions": [
+							"FULL_CONTROL",
+						],
+						"type": "CanonicalUser",
+						"uri":  "",
+					},
+				],
+				"hosted_zone_id":            "ZNB98KWMFR0R6",
+				"id":                        "mytestssakvnkasicsk19230dklsc",
+				"lifecycle_rule":            [],
+				"logging":                   [],
+				"object_lock_configuration": [],
+				"object_lock_enabled":       false,
+				"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+				"region":                    "ap-east-1",
+				"replication_configuration": [],
+				"request_payer":             "BucketOwner",
+				"server_side_encryption_configuration": [
+					{
+						"rule": [
+							{
+								"apply_server_side_encryption_by_default": [
+									{
+										"kms_master_key_id": "",
+										"sse_algorithm":     "AES256",
+									},
+								],
+								"bucket_key_enabled": false,
+							},
+						],
+					},
+				],
+				"tags":     {},
+				"tags_all": {},
+				"timeouts": null,
+				"versioning": [
+					{
+						"enabled":    false,
+						"mfa_delete": false,
+					},
+				],
+				"website":          [],
+				"website_domain":   null,
+				"website_endpoint": null,
+			},
+			"after_unknown": {},
+			"before": {
+				"acceleration_status": null,
+				"acl":                         null,
+				"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+				"bucket":                      "mytestssakvnkasicsk19230dklsc",
+				"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+				"bucket_prefix":               "",
+				"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+				"cors_rule":                   [],
+				"force_destroy":               false,
+				"grant": [
+					{
+						"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+						"permissions": [
+							"FULL_CONTROL",
+						],
+						"type": "CanonicalUser",
+						"uri":  "",
+					},
+				],
+				"hosted_zone_id":            "ZNB98KWMFR0R6",
+				"id":                        "mytestssakvnkasicsk19230dklsc",
+				"lifecycle_rule":            [],
+				"logging":                   [],
+				"object_lock_configuration": [],
+				"object_lock_enabled":       false,
+				"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+				"region":                    "ap-east-1",
+				"replication_configuration": [],
+				"request_payer":             "BucketOwner",
+				"server_side_encryption_configuration": [
+					{
+						"rule": [
+							{
+								"apply_server_side_encryption_by_default": [
+									{
+										"kms_master_key_id": "",
+										"sse_algorithm":     "AES256",
+									},
+								],
+								"bucket_key_enabled": false,
+							},
+						],
+					},
+				],
+				"tags":     {},
+				"tags_all": {},
+				"timeouts": null,
+				"versioning": [
+					{
+						"enabled":    false,
+						"mfa_delete": false,
+					},
+				],
+				"website":          [],
+				"website_domain":   null,
+				"website_endpoint": null,
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "mytestssakvnkasicsk19230dklsc",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_s3_bucket",
+	},
+	"aws_s3_bucket_policy.Ellventestssakvnkasicsk19230dklsc": {
+		"address": "aws_s3_bucket_policy.Ellventestssakvnkasicsk19230dklsc",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"policy": "{\"Id\":\"S3-Console-Auto-Gen-Policy-1670678796275\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"arn:aws:iam::891189580005:root\",\"arn:aws:iam::875537689616:root\",\"arn:aws:iam::555625778301:root\"]},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\"},{\"Action\":\"s3:GetBucketAcl\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::kucoin-cloudtrail-central\",\"Sid\":\"AWSCloudTrailAclCheck20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailWrite20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailS3Write20131101\"},{\"Action\":[\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::892535148939:role/arron\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"AWSCloudTrailReadOnly20230506\"}],\"Version\":\"2012-10-17\"}",
+			},
+			"after_unknown": {
+				"bucket": true,
+				"id":     true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "Ellventestssakvnkasicsk19230dklsc",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_s3_bucket_policy",
+	},
+	"aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc": {
+		"address": "aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc",
+		"change": {
+			"actions": [
+				"update",
+			],
+			"after": {
+				"bucket": "mytestssakvnkasicsk19230dklsc",
+				"id":     "mytestssakvnkasicsk19230dklsc",
+				"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+			},
+			"after_unknown": {},
+			"before": {
+				"bucket": "mytestssakvnkasicsk19230dklsc",
+				"id":     "mytestssakvnkasicsk19230dklsc",
+				"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "mytestssakvnkasicsk19230dklsc",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_s3_bucket_policy",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"aws": {
+				"expressions": {
+					"region": {
+						"references": [
+							"var.region",
+						],
+					},
+				},
+				"full_name": "registry.terraform.io/hashicorp/aws",
+				"name":      "aws",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "aws_iam_group.group",
+					"expressions": {
+						"name": {
+							"constant_value": "test-group",
+						},
+					},
+					"mode":                "managed",
+					"name":                "group",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_iam_group",
+				},
+				{
+					"address": "aws_iam_group_policy_attachment.test-attach",
+					"expressions": {
+						"group": {
+							"references": [
+								"aws_iam_group.group.name",
+								"aws_iam_group.group",
+							],
+						},
+						"policy_arn": {
+							"constant_value": "arn:aws:iam::aws:policy/AdministratorAccess",
+						},
+					},
+					"mode":                "managed",
+					"name":                "test-attach",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_iam_group_policy_attachment",
+				},
+				{
+					"address": "aws_iam_policy.policy_one",
+					"expressions": {
+						"name": {
+							"constant_value": "policy-618033",
+						},
+						"policy": {},
+					},
+					"mode":                "managed",
+					"name":                "policy_one",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_iam_policy",
+				},
+				{
+					"address": "aws_iam_policy.policy_two",
+					"expressions": {
+						"name": {
+							"constant_value": "policy-381966",
+						},
+						"policy": {},
+					},
+					"mode":                "managed",
+					"name":                "policy_two",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_iam_policy",
+				},
+				{
+					"address": "aws_iam_role.example",
+					"expressions": {
+						"assume_role_policy": {
+							"constant_value": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Action\": \"sts:AssumeRole\",\n      \"Principal\": {\n        \"Service\": \"ec2.amazonaws.com\"\n      },\n      \"Effect\": \"Allow\",\n      \"Sid\": \"\"\n    }\n  ]\n}\n",
+						},
+						"managed_policy_arns": {
+							"references": [
+								"aws_iam_policy.policy_one.arn",
+								"aws_iam_policy.policy_one",
+								"aws_iam_policy.policy_two.arn",
+								"aws_iam_policy.policy_two",
+							],
+						},
+						"name": {
+							"constant_value": "yak_role",
+						},
+					},
+					"mode":                "managed",
+					"name":                "example",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_iam_role",
+				},
+				{
+					"address": "aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+					"expressions": {
+						"bucket": {
+							"constant_value": "Ellventestssakvnkasicsk19230dklsc",
+						},
+					},
+					"mode":                "managed",
+					"name":                "Ellventestssakvnkasicsk19230dklsc",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_s3_bucket",
+				},
+				{
+					"address": "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+					"expressions": {
+						"bucket": {
+							"constant_value": "mytestssakvnkasicsk19230dklsc",
+						},
+					},
+					"mode":                "managed",
+					"name":                "mytestssakvnkasicsk19230dklsc",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_s3_bucket",
+				},
+				{
+					"address": "aws_s3_bucket_policy.Ellventestssakvnkasicsk19230dklsc",
+					"expressions": {
+						"bucket": {
+							"references": [
+								"aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc.id",
+								"aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+							],
+						},
+						"policy": {
+							"constant_value": "{\n    \"Version\": \"2012-10-17\",\n    \"Id\": \"S3-Console-Auto-Gen-Policy-1670678796275\",\n    \"Statement\": [\n        {\n            \"Sid\": \"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": [\n                    \"arn:aws:iam::891189580005:root\",\n                    \"arn:aws:iam::875537689616:root\",\n                    \"arn:aws:iam::555625778301:root\"\n                ]\n            },\n            \"Action\": [\n                \"s3:GetBucketVersioning\",\n                \"s3:PutBucketVersioning\",\n                \"s3:ReplicateObject\",\n                \"s3:ReplicateDelete\"\n            ],\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/*\"\n            ]\n        },\n        {\n            \"Sid\": \"AWSCloudTrailAclCheck20131101\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"Service\": \"cloudtrail.amazonaws.com\"\n            },\n            \"Action\": \"s3:GetBucketAcl\",\n            \"Resource\": \"arn:aws:s3:::kucoin-cloudtrail-central\"\n        },\n        {\n            \"Sid\": \"AWSCloudTrailWrite20131101\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"Service\": \"cloudtrail.amazonaws.com\"\n            },\n            \"Action\": \"s3:PutObject\",\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"\n            ],\n            \"Condition\": {\n                \"StringEquals\": {\n                    \"aws:SourceArn\": [\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"\n                    ],\n                    \"s3:x-amz-acl\": \"bucket-owner-full-control\"\n                }\n            }\n        },\n        {\n            \"Sid\": \"AWSCloudTrailS3Write20131101\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"Service\": \"cloudtrail.amazonaws.com\"\n            },\n            \"Action\": \"s3:PutObject\",\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"\n            ],\n            \"Condition\": {\n                \"StringEquals\": {\n                    \"aws:SourceArn\": [\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"\n                    ],\n                    \"s3:x-amz-acl\": \"bucket-owner-full-control\"\n                }\n            }\n        },\n        {\n            \"Sid\": \"AWSCloudTrailReadOnly20230506\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": \"arn:aws:iam::892535148939:role/arron\"\n            },\n            \"Action\": [\n                \"s3:GetObject\",\n                \"s3:ListBucket\"\n            ],\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/*\"\n            ]\n        }\n    ]\n}\n",
+						},
+					},
+					"mode":                "managed",
+					"name":                "Ellventestssakvnkasicsk19230dklsc",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_s3_bucket_policy",
+				},
+				{
+					"address": "aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc",
+					"expressions": {
+						"bucket": {
+							"references": [
+								"aws_s3_bucket.mytestssakvnkasicsk19230dklsc.id",
+								"aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+							],
+						},
+						"policy": {
+							"constant_value": "{\n  \"Version\": \"2012-10-17\",\n  \"Id\": \"MYBUCKETPOLICY\",\n  \"Statement\": [\n    {\n      \"Sid\": \"IPAllow\",\n      \"Effect\": \"Deny\",\n      \"Principal\": \"*\",\n      \"Action\": [\n        \"s3:GetBucketVersioning\",\n        \"s3:PutBucketVersioning\",\n        \"s3:ReplicateObject\",\n        \"s3:ReplicateDelete\"\n      ],\n      \"Resource\": \"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\n      \"Condition\": {\n         \"IpAddress\": {\"aws:SourceIp\": \"8.8.8.8/32\"}\n      }\n    }\n  ]\n}\n",
+						},
+					},
+					"mode":                "managed",
+					"name":                "mytestssakvnkasicsk19230dklsc",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_s3_bucket_policy",
+				},
+			],
+			"variables": {
+				"aws": {
+					"default": "ap-east-1",
+				},
+				"aws_region": {
+					"default": "ap-east-1",
+				},
+				"awsvpc_service_subnetids": {
+					"default":     [],
+					"description": "List of subnet ids to which a service is deployed in fargate mode.",
+				},
+				"region": {
+					"default": "ap-east-1",
+				},
+			},
+		},
+	},
+	"format_version": "1.1",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":          "aws_iam_group.group",
+					"mode":             "managed",
+					"name":             "group",
+					"provider_name":    "registry.terraform.io/hashicorp/aws",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "aws_iam_group",
+					"values": {
+						"name": "test-group",
+						"path": "/",
+					},
+				},
+				{
+					"address":          "aws_iam_group_policy_attachment.test-attach",
+					"mode":             "managed",
+					"name":             "test-attach",
+					"provider_name":    "registry.terraform.io/hashicorp/aws",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "aws_iam_group_policy_attachment",
+					"values": {
+						"group":      "test-group",
+						"policy_arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+					},
+				},
+				{
+					"address":        "aws_iam_policy.policy_one",
+					"mode":           "managed",
+					"name":           "policy_one",
+					"provider_name":  "registry.terraform.io/hashicorp/aws",
+					"schema_version": 0,
+					"sensitive_values": {
+						"tags_all": {},
+					},
+					"type": "aws_iam_policy",
+					"values": {
+						"description": null,
+						"name":        "policy-618033",
+						"path":        "/",
+						"policy":      "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+						"tags":        null,
+					},
+				},
+				{
+					"address":        "aws_iam_policy.policy_two",
+					"mode":           "managed",
+					"name":           "policy_two",
+					"provider_name":  "registry.terraform.io/hashicorp/aws",
+					"schema_version": 0,
+					"sensitive_values": {
+						"tags_all": {},
+					},
+					"type": "aws_iam_policy",
+					"values": {
+						"description": null,
+						"name":        "policy-381966",
+						"path":        "/",
+						"policy":      "{\"Statement\":[{\"Action\":[\"s3:ListAllMyBuckets\",\"s3:ListBucket\",\"s3:HeadBucket\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+						"tags":        null,
+					},
+				},
+				{
+					"address":        "aws_iam_role.example",
+					"mode":           "managed",
+					"name":           "example",
+					"provider_name":  "registry.terraform.io/hashicorp/aws",
+					"schema_version": 0,
+					"sensitive_values": {
+						"inline_policy":       [],
+						"managed_policy_arns": [],
+						"tags_all":            {},
+					},
+					"type": "aws_iam_role",
+					"values": {
+						"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+						"description":           null,
+						"force_detach_policies": false,
+						"max_session_duration":  3600,
+						"name":                  "yak_role",
+						"path":                  "/",
+						"permissions_boundary":  null,
+						"tags":                  null,
+					},
+				},
+				{
+					"address":        "aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+					"mode":           "managed",
+					"name":           "Ellventestssakvnkasicsk19230dklsc",
+					"provider_name":  "registry.terraform.io/hashicorp/aws",
+					"schema_version": 0,
+					"sensitive_values": {
+						"cors_rule":                            [],
+						"grant":                                [],
+						"lifecycle_rule":                       [],
+						"logging":                              [],
+						"object_lock_configuration":            [],
+						"replication_configuration":            [],
+						"server_side_encryption_configuration": [],
+						"tags_all":                             {},
+						"versioning":                           [],
+						"website":                              [],
+					},
+					"type": "aws_s3_bucket",
+					"values": {
+						"bucket":        "Ellventestssakvnkasicsk19230dklsc",
+						"force_destroy": false,
+						"tags":          null,
+						"timeouts":      null,
+					},
+				},
+				{
+					"address":        "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+					"mode":           "managed",
+					"name":           "mytestssakvnkasicsk19230dklsc",
+					"provider_name":  "registry.terraform.io/hashicorp/aws",
+					"schema_version": 0,
+					"sensitive_values": {
+						"cors_rule": [],
+						"grant": [
+							{
+								"permissions": [
+									false,
+								],
+							},
+						],
+						"lifecycle_rule":            [],
+						"logging":                   [],
+						"object_lock_configuration": [],
+						"replication_configuration": [],
+						"server_side_encryption_configuration": [
+							{
+								"rule": [
+									{
+										"apply_server_side_encryption_by_default": [
+											{},
+										],
+									},
+								],
+							},
+						],
+						"tags":     {},
+						"tags_all": {},
+						"versioning": [
+							{},
+						],
+						"website": [],
+					},
+					"type": "aws_s3_bucket",
+					"values": {
+						"acceleration_status": null,
+						"acl":                         null,
+						"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+						"bucket":                      "mytestssakvnkasicsk19230dklsc",
+						"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+						"bucket_prefix":               "",
+						"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+						"cors_rule":                   [],
+						"force_destroy":               false,
+						"grant": [
+							{
+								"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+								"permissions": [
+									"FULL_CONTROL",
+								],
+								"type": "CanonicalUser",
+								"uri":  "",
+							},
+						],
+						"hosted_zone_id":            "ZNB98KWMFR0R6",
+						"id":                        "mytestssakvnkasicsk19230dklsc",
+						"lifecycle_rule":            [],
+						"logging":                   [],
+						"object_lock_configuration": [],
+						"object_lock_enabled":       false,
+						"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+						"region":                    "ap-east-1",
+						"replication_configuration": [],
+						"request_payer":             "BucketOwner",
+						"server_side_encryption_configuration": [
+							{
+								"rule": [
+									{
+										"apply_server_side_encryption_by_default": [
+											{
+												"kms_master_key_id": "",
+												"sse_algorithm":     "AES256",
+											},
+										],
+										"bucket_key_enabled": false,
+									},
+								],
+							},
+						],
+						"tags":     {},
+						"tags_all": {},
+						"timeouts": null,
+						"versioning": [
+							{
+								"enabled":    false,
+								"mfa_delete": false,
+							},
+						],
+						"website":          [],
+						"website_domain":   null,
+						"website_endpoint": null,
+					},
+				},
+				{
+					"address":          "aws_s3_bucket_policy.Ellventestssakvnkasicsk19230dklsc",
+					"mode":             "managed",
+					"name":             "Ellventestssakvnkasicsk19230dklsc",
+					"provider_name":    "registry.terraform.io/hashicorp/aws",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "aws_s3_bucket_policy",
+					"values": {
+						"policy": "{\"Id\":\"S3-Console-Auto-Gen-Policy-1670678796275\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"arn:aws:iam::891189580005:root\",\"arn:aws:iam::875537689616:root\",\"arn:aws:iam::555625778301:root\"]},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\"},{\"Action\":\"s3:GetBucketAcl\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::kucoin-cloudtrail-central\",\"Sid\":\"AWSCloudTrailAclCheck20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailWrite20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailS3Write20131101\"},{\"Action\":[\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::892535148939:role/arron\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"AWSCloudTrailReadOnly20230506\"}],\"Version\":\"2012-10-17\"}",
+					},
+				},
+				{
+					"address":          "aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc",
+					"mode":             "managed",
+					"name":             "mytestssakvnkasicsk19230dklsc",
+					"provider_name":    "registry.terraform.io/hashicorp/aws",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "aws_s3_bucket_policy",
+					"values": {
+						"bucket": "mytestssakvnkasicsk19230dklsc",
+						"id":     "mytestssakvnkasicsk19230dklsc",
+						"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "1.0",
+		"terraform_version": "1.4.6",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":        "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+						"mode":           "managed",
+						"name":           "mytestssakvnkasicsk19230dklsc",
+						"provider_name":  "registry.terraform.io/hashicorp/aws",
+						"schema_version": 0,
+						"sensitive_values": {
+							"cors_rule": [],
+							"grant": [
+								{
+									"permissions": [
+										false,
+									],
+								},
+							],
+							"lifecycle_rule":            [],
+							"logging":                   [],
+							"object_lock_configuration": [],
+							"replication_configuration": [],
+							"server_side_encryption_configuration": [
+								{
+									"rule": [
+										{
+											"apply_server_side_encryption_by_default": [
+												{},
+											],
+										},
+									],
+								},
+							],
+							"tags":     {},
+							"tags_all": {},
+							"versioning": [
+								{},
+							],
+							"website": [],
+						},
+						"type": "aws_s3_bucket",
+						"values": {
+							"acceleration_status": null,
+							"acl":                         null,
+							"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+							"bucket":                      "mytestssakvnkasicsk19230dklsc",
+							"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+							"bucket_prefix":               "",
+							"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+							"cors_rule":                   [],
+							"force_destroy":               false,
+							"grant": [
+								{
+									"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+									"permissions": [
+										"FULL_CONTROL",
+									],
+									"type": "CanonicalUser",
+									"uri":  "",
+								},
+							],
+							"hosted_zone_id":            "ZNB98KWMFR0R6",
+							"id":                        "mytestssakvnkasicsk19230dklsc",
+							"lifecycle_rule":            [],
+							"logging":                   [],
+							"object_lock_configuration": [],
+							"object_lock_enabled":       false,
+							"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+							"region":                    "ap-east-1",
+							"replication_configuration": [],
+							"request_payer":             "BucketOwner",
+							"server_side_encryption_configuration": [
+								{
+									"rule": [
+										{
+											"apply_server_side_encryption_by_default": [
+												{
+													"kms_master_key_id": "",
+													"sse_algorithm":     "AES256",
+												},
+											],
+											"bucket_key_enabled": false,
+										},
+									],
+								},
+							],
+							"tags":     {},
+							"tags_all": {},
+							"timeouts": null,
+							"versioning": [
+								{
+									"enabled":    false,
+									"mfa_delete": false,
+								},
+							],
+							"website":          [],
+							"website_domain":   null,
+							"website_endpoint": null,
+						},
+					},
+					{
+						"address": "aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc",
+						"depends_on": [
+							"aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+						],
+						"mode":             "managed",
+						"name":             "mytestssakvnkasicsk19230dklsc",
+						"provider_name":    "registry.terraform.io/hashicorp/aws",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "aws_s3_bucket_policy",
+						"values": {
+							"bucket": "mytestssakvnkasicsk19230dklsc",
+							"id":     "mytestssakvnkasicsk19230dklsc",
+							"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+						},
+					},
+				],
+			},
+		},
+	},
+	"relevant_attributes": [
+		{
+			"attribute": [
+				"arn",
+			],
+			"resource": "aws_iam_policy.policy_one",
+		},
+		{
+			"attribute": [
+				"arn",
+			],
+			"resource": "aws_iam_policy.policy_two",
+		},
+		{
+			"attribute": [
+				"id",
+			],
+			"resource": "aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+		},
+		{
+			"attribute": [
+				"id",
+			],
+			"resource": "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+		},
+		{
+			"attribute": [
+				"name",
+			],
+			"resource": "aws_iam_group.group",
+		},
+	],
+	"resource_changes": [
+		{
+			"address": "aws_iam_group.group",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"name": "test-group",
+					"path": "/",
+				},
+				"after_sensitive": {},
+				"after_unknown": {
+					"arn":       true,
+					"id":        true,
+					"unique_id": true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "group",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_iam_group",
+		},
+		{
+			"address": "aws_iam_group_policy_attachment.test-attach",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"group":      "test-group",
+					"policy_arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+				},
+				"after_sensitive": {},
+				"after_unknown": {
+					"id": true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "test-attach",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_iam_group_policy_attachment",
+		},
+		{
+			"address": "aws_iam_policy.policy_one",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description": null,
+					"name":        "policy-618033",
+					"path":        "/",
+					"policy":      "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+					"tags":        null,
+				},
+				"after_sensitive": {
+					"tags_all": {},
+				},
+				"after_unknown": {
+					"arn":         true,
+					"id":          true,
+					"name_prefix": true,
+					"policy_id":   true,
+					"tags_all":    true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "policy_one",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_iam_policy",
+		},
+		{
+			"address": "aws_iam_policy.policy_two",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description": null,
+					"name":        "policy-381966",
+					"path":        "/",
+					"policy":      "{\"Statement\":[{\"Action\":[\"s3:ListAllMyBuckets\",\"s3:ListBucket\",\"s3:HeadBucket\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+					"tags":        null,
+				},
+				"after_sensitive": {
+					"tags_all": {},
+				},
+				"after_unknown": {
+					"arn":         true,
+					"id":          true,
+					"name_prefix": true,
+					"policy_id":   true,
+					"tags_all":    true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "policy_two",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_iam_policy",
+		},
+		{
+			"address": "aws_iam_role.example",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+					"description":           null,
+					"force_detach_policies": false,
+					"max_session_duration":  3600,
+					"name":                  "yak_role",
+					"path":                  "/",
+					"permissions_boundary":  null,
+					"tags":                  null,
+				},
+				"after_sensitive": {
+					"inline_policy":       [],
+					"managed_policy_arns": [],
+					"tags_all":            {},
+				},
+				"after_unknown": {
+					"arn":                 true,
+					"create_date":         true,
+					"id":                  true,
+					"inline_policy":       true,
+					"managed_policy_arns": true,
+					"name_prefix":         true,
+					"tags_all":            true,
+					"unique_id":           true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "example",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_iam_role",
+		},
+		{
+			"address": "aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"bucket":        "Ellventestssakvnkasicsk19230dklsc",
+					"force_destroy": false,
+					"tags":          null,
+					"timeouts":      null,
+				},
+				"after_sensitive": {
+					"cors_rule":                            [],
+					"grant":                                [],
+					"lifecycle_rule":                       [],
+					"logging":                              [],
+					"object_lock_configuration":            [],
+					"replication_configuration":            [],
+					"server_side_encryption_configuration": [],
+					"tags_all":                             {},
+					"versioning":                           [],
+					"website":                              [],
+				},
+				"after_unknown": {
+					"acceleration_status": true,
+					"acl":                                  true,
+					"arn":                                  true,
+					"bucket_domain_name":                   true,
+					"bucket_prefix":                        true,
+					"bucket_regional_domain_name":          true,
+					"cors_rule":                            true,
+					"grant":                                true,
+					"hosted_zone_id":                       true,
+					"id":                                   true,
+					"lifecycle_rule":                       true,
+					"logging":                              true,
+					"object_lock_configuration":            true,
+					"object_lock_enabled":                  true,
+					"policy":                               true,
+					"region":                               true,
+					"replication_configuration":            true,
+					"request_payer":                        true,
+					"server_side_encryption_configuration": true,
+					"tags_all":                             true,
+					"versioning":                           true,
+					"website":                              true,
+					"website_domain":                       true,
+					"website_endpoint":                     true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "Ellventestssakvnkasicsk19230dklsc",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_s3_bucket",
+		},
+		{
+			"address": "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"acceleration_status": null,
+					"acl":                         null,
+					"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+					"bucket":                      "mytestssakvnkasicsk19230dklsc",
+					"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+					"bucket_prefix":               "",
+					"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+					"cors_rule":                   [],
+					"force_destroy":               false,
+					"grant": [
+						{
+							"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+							"permissions": [
+								"FULL_CONTROL",
+							],
+							"type": "CanonicalUser",
+							"uri":  "",
+						},
+					],
+					"hosted_zone_id":            "ZNB98KWMFR0R6",
+					"id":                        "mytestssakvnkasicsk19230dklsc",
+					"lifecycle_rule":            [],
+					"logging":                   [],
+					"object_lock_configuration": [],
+					"object_lock_enabled":       false,
+					"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+					"region":                    "ap-east-1",
+					"replication_configuration": [],
+					"request_payer":             "BucketOwner",
+					"server_side_encryption_configuration": [
+						{
+							"rule": [
+								{
+									"apply_server_side_encryption_by_default": [
+										{
+											"kms_master_key_id": "",
+											"sse_algorithm":     "AES256",
+										},
+									],
+									"bucket_key_enabled": false,
+								},
+							],
+						},
+					],
+					"tags":     {},
+					"tags_all": {},
+					"timeouts": null,
+					"versioning": [
+						{
+							"enabled":    false,
+							"mfa_delete": false,
+						},
+					],
+					"website":          [],
+					"website_domain":   null,
+					"website_endpoint": null,
+				},
+				"after_sensitive": {
+					"cors_rule": [],
+					"grant": [
+						{
+							"permissions": [
+								false,
+							],
+						},
+					],
+					"lifecycle_rule":            [],
+					"logging":                   [],
+					"object_lock_configuration": [],
+					"replication_configuration": [],
+					"server_side_encryption_configuration": [
+						{
+							"rule": [
+								{
+									"apply_server_side_encryption_by_default": [
+										{},
+									],
+								},
+							],
+						},
+					],
+					"tags":     {},
+					"tags_all": {},
+					"versioning": [
+						{},
+					],
+					"website": [],
+				},
+				"after_unknown": {},
+				"before": {
+					"acceleration_status": null,
+					"acl":                         null,
+					"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+					"bucket":                      "mytestssakvnkasicsk19230dklsc",
+					"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+					"bucket_prefix":               "",
+					"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+					"cors_rule":                   [],
+					"force_destroy":               false,
+					"grant": [
+						{
+							"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+							"permissions": [
+								"FULL_CONTROL",
+							],
+							"type": "CanonicalUser",
+							"uri":  "",
+						},
+					],
+					"hosted_zone_id":            "ZNB98KWMFR0R6",
+					"id":                        "mytestssakvnkasicsk19230dklsc",
+					"lifecycle_rule":            [],
+					"logging":                   [],
+					"object_lock_configuration": [],
+					"object_lock_enabled":       false,
+					"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+					"region":                    "ap-east-1",
+					"replication_configuration": [],
+					"request_payer":             "BucketOwner",
+					"server_side_encryption_configuration": [
+						{
+							"rule": [
+								{
+									"apply_server_side_encryption_by_default": [
+										{
+											"kms_master_key_id": "",
+											"sse_algorithm":     "AES256",
+										},
+									],
+									"bucket_key_enabled": false,
+								},
+							],
+						},
+					],
+					"tags":     {},
+					"tags_all": {},
+					"timeouts": null,
+					"versioning": [
+						{
+							"enabled":    false,
+							"mfa_delete": false,
+						},
+					],
+					"website":          [],
+					"website_domain":   null,
+					"website_endpoint": null,
+				},
+				"before_sensitive": {
+					"cors_rule": [],
+					"grant": [
+						{
+							"permissions": [
+								false,
+							],
+						},
+					],
+					"lifecycle_rule":            [],
+					"logging":                   [],
+					"object_lock_configuration": [],
+					"replication_configuration": [],
+					"server_side_encryption_configuration": [
+						{
+							"rule": [
+								{
+									"apply_server_side_encryption_by_default": [
+										{},
+									],
+								},
+							],
+						},
+					],
+					"tags":     {},
+					"tags_all": {},
+					"versioning": [
+						{},
+					],
+					"website": [],
+				},
+			},
+			"mode":          "managed",
+			"name":          "mytestssakvnkasicsk19230dklsc",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_s3_bucket",
+		},
+		{
+			"address": "aws_s3_bucket_policy.Ellventestssakvnkasicsk19230dklsc",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"policy": "{\"Id\":\"S3-Console-Auto-Gen-Policy-1670678796275\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"arn:aws:iam::891189580005:root\",\"arn:aws:iam::875537689616:root\",\"arn:aws:iam::555625778301:root\"]},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\"},{\"Action\":\"s3:GetBucketAcl\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::kucoin-cloudtrail-central\",\"Sid\":\"AWSCloudTrailAclCheck20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailWrite20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailS3Write20131101\"},{\"Action\":[\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::892535148939:role/arron\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"AWSCloudTrailReadOnly20230506\"}],\"Version\":\"2012-10-17\"}",
+				},
+				"after_sensitive": {},
+				"after_unknown": {
+					"bucket": true,
+					"id":     true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "Ellventestssakvnkasicsk19230dklsc",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_s3_bucket_policy",
+		},
+		{
+			"address": "aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc",
+			"change": {
+				"actions": [
+					"update",
+				],
+				"after": {
+					"bucket": "mytestssakvnkasicsk19230dklsc",
+					"id":     "mytestssakvnkasicsk19230dklsc",
+					"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+				},
+				"after_sensitive": {},
+				"after_unknown":   {},
+				"before": {
+					"bucket": "mytestssakvnkasicsk19230dklsc",
+					"id":     "mytestssakvnkasicsk19230dklsc",
+					"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+				},
+				"before_sensitive": {},
+			},
+			"mode":          "managed",
+			"name":          "mytestssakvnkasicsk19230dklsc",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_s3_bucket_policy",
+		},
+	],
+	"terraform_version": "1.4.6",
+	"variables": {
+		"aws": {
+			"value": "ap-east-1",
+		},
+		"aws_region": {
+			"value": "ap-east-1",
+		},
+		"awsvpc_service_subnetids": {
+			"value": [],
+		},
+		"region": {
+			"value": "ap-east-1",
+		},
+	},
+}

@@ -1,0 +1,198 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data":    {},
+		"modules": {},
+		"outputs": {},
+		"providers": {
+			"aws": {
+				"alias": {
+					"": {
+						"config": {},
+						"references": {
+							"region": [
+								"var.region",
+							],
+						},
+						"version": "",
+					},
+				},
+				"config": {},
+				"references": {
+					"region": [
+						"var.region",
+					],
+				},
+				"version": "",
+			},
+		},
+		"resources": {
+			"aws_iam_group": {
+				"group": {
+					"config": {
+						"name": "test-group",
+					},
+					"provisioners": null,
+					"references": {
+						"name": [],
+					},
+				},
+			},
+			"aws_iam_group_policy_attachment": {
+				"test-attach": {
+					"config": {
+						"policy_arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+					},
+					"provisioners": null,
+					"references": {
+						"group": [
+							"aws_iam_group.group.name",
+							"aws_iam_group.group",
+						],
+						"policy_arn": [],
+					},
+				},
+			},
+			"aws_iam_policy": {
+				"policy_one": {
+					"config": {
+						"name":   "policy-618033",
+						"policy": null,
+					},
+					"provisioners": null,
+					"references": {
+						"name":   [],
+						"policy": [],
+					},
+				},
+				"policy_two": {
+					"config": {
+						"name":   "policy-381966",
+						"policy": null,
+					},
+					"provisioners": null,
+					"references": {
+						"name":   [],
+						"policy": [],
+					},
+				},
+			},
+			"aws_iam_role": {
+				"example": {
+					"config": {
+						"assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Action\": \"sts:AssumeRole\",\n      \"Principal\": {\n        \"Service\": \"ec2.amazonaws.com\"\n      },\n      \"Effect\": \"Allow\",\n      \"Sid\": \"\"\n    }\n  ]\n}\n",
+						"name":               "yak_role",
+					},
+					"provisioners": null,
+					"references": {
+						"assume_role_policy": [],
+						"managed_policy_arns": [
+							"aws_iam_policy.policy_one.arn",
+							"aws_iam_policy.policy_one",
+							"aws_iam_policy.policy_two.arn",
+							"aws_iam_policy.policy_two",
+						],
+						"name": [],
+					},
+				},
+			},
+			"aws_s3_bucket": {
+				"Ellventestssakvnkasicsk19230dklsc": {
+					"config": {
+						"bucket": "Ellventestssakvnkasicsk19230dklsc",
+					},
+					"provisioners": null,
+					"references": {
+						"bucket": [],
+					},
+				},
+				"mytestssakvnkasicsk19230dklsc": {
+					"config": {
+						"bucket": "mytestssakvnkasicsk19230dklsc",
+					},
+					"provisioners": null,
+					"references": {
+						"bucket": [],
+					},
+				},
+			},
+			"aws_s3_bucket_policy": {
+				"Ellventestssakvnkasicsk19230dklsc": {
+					"config": {
+						"policy": "{\n    \"Version\": \"2012-10-17\",\n    \"Id\": \"S3-Console-Auto-Gen-Policy-1670678796275\",\n    \"Statement\": [\n        {\n            \"Sid\": \"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": [\n                    \"arn:aws:iam::891189580005:root\",\n                    \"arn:aws:iam::875537689616:root\",\n                    \"arn:aws:iam::555625778301:root\"\n                ]\n            },\n            \"Action\": [\n                \"s3:GetBucketVersioning\",\n                \"s3:PutBucketVersioning\",\n                \"s3:ReplicateObject\",\n                \"s3:ReplicateDelete\"\n            ],\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/*\"\n            ]\n        },\n        {\n            \"Sid\": \"AWSCloudTrailAclCheck20131101\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"Service\": \"cloudtrail.amazonaws.com\"\n            },\n            \"Action\": \"s3:GetBucketAcl\",\n            \"Resource\": \"arn:aws:s3:::kucoin-cloudtrail-central\"\n        },\n        {\n            \"Sid\": \"AWSCloudTrailWrite20131101\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"Service\": \"cloudtrail.amazonaws.com\"\n            },\n            \"Action\": \"s3:PutObject\",\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"\n            ],\n            \"Condition\": {\n                \"StringEquals\": {\n                    \"aws:SourceArn\": [\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"\n                    ],\n                    \"s3:x-amz-acl\": \"bucket-owner-full-control\"\n                }\n            }\n        },\n        {\n            \"Sid\": \"AWSCloudTrailS3Write20131101\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"Service\": \"cloudtrail.amazonaws.com\"\n            },\n            \"Action\": \"s3:PutObject\",\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"\n            ],\n            \"Condition\": {\n                \"StringEquals\": {\n                    \"aws:SourceArn\": [\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\n                        \"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"\n                    ],\n                    \"s3:x-amz-acl\": \"bucket-owner-full-control\"\n                }\n            }\n        },\n        {\n            \"Sid\": \"AWSCloudTrailReadOnly20230506\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\n                \"AWS\": \"arn:aws:iam::892535148939:role/arron\"\n            },\n            \"Action\": [\n                \"s3:GetObject\",\n                \"s3:ListBucket\"\n            ],\n            \"Resource\": [\n                \"arn:aws:s3:::kucoin-cloudtrail-central\",\n                \"arn:aws:s3:::kucoin-cloudtrail-central/*\"\n            ]\n        }\n    ]\n}\n",
+					},
+					"provisioners": null,
+					"references": {
+						"bucket": [
+							"aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc.id",
+							"aws_s3_bucket.Ellventestssakvnkasicsk19230dklsc",
+						],
+						"policy": [],
+					},
+				},
+				"mytestssakvnkasicsk19230dklsc": {
+					"config": {
+						"policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Id\": \"MYBUCKETPOLICY\",\n  \"Statement\": [\n    {\n      \"Sid\": \"IPAllow\",\n      \"Effect\": \"Deny\",\n      \"Principal\": \"*\",\n      \"Action\": [\n        \"s3:GetBucketVersioning\",\n        \"s3:PutBucketVersioning\",\n        \"s3:ReplicateObject\",\n        \"s3:ReplicateDelete\"\n      ],\n      \"Resource\": \"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\n      \"Condition\": {\n         \"IpAddress\": {\"aws:SourceIp\": \"8.8.8.8/32\"}\n      }\n    }\n  ]\n}\n",
+					},
+					"provisioners": null,
+					"references": {
+						"bucket": [
+							"aws_s3_bucket.mytestssakvnkasicsk19230dklsc.id",
+							"aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+						],
+						"policy": [],
+					},
+				},
+			},
+		},
+		"variables": {
+			"aws": {
+				"default":     "ap-east-1",
+				"description": "",
+			},
+			"aws_region": {
+				"default":     "ap-east-1",
+				"description": "",
+			},
+			"awsvpc_service_subnetids": {
+				"default":     [],
+				"description": "List of subnet ids to which a service is deployed in fargate mode.",
+			},
+			"region": {
+				"default":     "ap-east-1",
+				"description": "",
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+modules = _modules.root.modules
+providers = _modules.root.providers
+resources = _modules.root.resources
+variables = _modules.root.variables
+outputs = _modules.root.outputs

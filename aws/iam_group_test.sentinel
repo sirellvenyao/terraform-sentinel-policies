@@ -1,0 +1,46 @@
+import "tfplan/v2" as tfplan
+import "types"
+import "strings"
+import "json"
+
+aws_iam_group_policy_attachment = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.mode is "managed" and
+		resource_changes.type is "aws_iam_group_policy_attachment" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"])
+}
+
+iamGroupPolicyAttachmentCheck = func(aws_iam_group_policy_attachments){
+    iamGroupPolicyAttachmentlist = []
+    //print(aws_s3_bucket_policys)
+    for aws_iam_group_policy_attachments as _, aws_iam_group_policy_attachment {
+        //print(aws_iam_group_policy_attachment.change.after)
+        if "policy_arn" in (keys(aws_iam_group_policy_attachment.change.after)) {
+            if (aws_iam_group_policy_attachment.change.after.policy_arn) is "arn:aws:iam::aws:policy/AdministratorAccess" {
+                append(iamGroupPolicyAttachmentlist,aws_iam_group_policy_attachment.name)
+                print("This aws_iam_group >>", aws_iam_group_policy_attachment.change.after.group , "<< can not attach policy_arn arn:aws:iam::aws:policy/AdministratorAccess")
+            }
+        }
+    }
+    if length(iamGroupPolicyAttachmentlist) !=0{
+        print("")
+        print("// --------------------------------------------------------")
+        print("// Name:        Ensure arn:aws:iam::aws:policy/AdministratorAccess ")
+        print("//              can not be attached to any IAM Group ")
+        print("// Category:    IAM")
+        print("// Provider:    kc/cybersec")
+        print("// Resource:    aws_iam_group_policy_attachment")
+        print("// Check:       arn:aws:iam::aws:policy/AdministratorAccess can not ")
+        print("//              be attached to any IAM Group")
+        print("// --------------------------------------------------------")
+        print("// Ensure IAM policies that allow full *:* administrative privileges are not attached")
+        print("// (IAM Group Policy Attachment)")
+        print("// --------------------------------------------------------") 
+    }
+    return length(iamGroupPolicyAttachmentlist)
+
+}
+
+main = rule{
+    iamGroupPolicyAttachmentCheck(aws_iam_group_policy_attachment) == 0 
+}

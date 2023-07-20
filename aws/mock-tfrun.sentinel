@@ -1,0 +1,53 @@
+id = "run-oPEbe2TojQpQnzXW"
+created_at = "2023-07-20T11:48:17.062Z"
+created_by = "gh-webhooks-sirellvenyao-ysvmD1RHdF"
+message = "123131313123123"
+commit_sha = "be155ca642ea3b9a40d7b712820df28d41cf4e2e"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+project = {
+	"id":   "prj-MUGGj2XoEDtDhMvh",
+	"name": "Default Project",
+}
+
+variables = {
+	"AWS_ACCESS_KEY_ID": {
+		"category":  "terraform",
+		"sensitive": true,
+	},
+	"AWS_SECRET_ACCESS_KEY": {
+		"category":  "terraform",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "sirellvenyao",
+}
+
+workspace = {
+	"auto_apply":     false,
+	"created_at":     "2023-06-05T09:57:52.726Z",
+	"description":    null,
+	"execution_mode": "remote",
+	"id":             "ws-kvYxGC9rXWhst3yt",
+	"name":           "DemoPolicy",
+	"tags":           [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "sirellvenyao/selftest",
+		"identifier":         "sirellvenyao/selftest",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}
+
+cost_estimate = {
+	"delta_monthly_cost":    "0.0",
+	"prior_monthly_cost":    "0.0",
+	"proposed_monthly_cost": "0.0",
+}

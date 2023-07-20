@@ -1,0 +1,558 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {},
+		"path": [],
+		"resources": {
+			"aws_iam_group": {
+				"group": {
+					0: {
+						"applied": {
+							"name": "test-group",
+							"path": "/",
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "test-group",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"unique_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_group_policy_attachment": {
+				"test-attach": {
+					0: {
+						"applied": {
+							"group":      "test-group",
+							"policy_arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+						},
+						"destroy": false,
+						"diff": {
+							"group": {
+								"computed": false,
+								"new":      "test-group",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy_arn": {
+								"computed": false,
+								"new":      "arn:aws:iam::aws:policy/AdministratorAccess",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_policy": {
+				"policy_one": {
+					0: {
+						"applied": {
+							"description": null,
+							"name":        "policy-618033",
+							"path":        "/",
+							"policy":      "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+							"tags":        null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "policy-618033",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":[\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"policy_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"policy_two": {
+					0: {
+						"applied": {
+							"description": null,
+							"name":        "policy-381966",
+							"path":        "/",
+							"policy":      "{\"Statement\":[{\"Action\":[\"s3:ListAllMyBuckets\",\"s3:ListBucket\",\"s3:HeadBucket\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+							"tags":        null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "policy-381966",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":[\"s3:ListAllMyBuckets\",\"s3:ListBucket\",\"s3:HeadBucket\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"policy_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_role": {
+				"example": {
+					0: {
+						"applied": {
+							"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+							"description":           null,
+							"force_detach_policies": false,
+							"max_session_duration":  3600,
+							"name":                  "yak_role",
+							"path":                  "/",
+							"permissions_boundary":  null,
+							"tags":                  null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assume_role_policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"create_date": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"force_detach_policies": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"inline_policy.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"managed_policy_arns.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_session_duration": {
+								"computed": false,
+								"new":      "3600",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "yak_role",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"permissions_boundary": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"unique_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_s3_bucket": {
+				"Ellventestssakvnkasicsk19230dklsc": {
+					0: {
+						"applied": {
+							"bucket":        "Ellventestssakvnkasicsk19230dklsc",
+							"force_destroy": false,
+							"tags":          null,
+							"timeouts":      null,
+						},
+						"destroy": false,
+						"diff": {
+							"acceleration_status": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"acl": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"bucket": {
+								"computed": false,
+								"new":      "Ellventestssakvnkasicsk19230dklsc",
+								"old":      "",
+							},
+							"bucket_domain_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"bucket_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"bucket_regional_domain_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cors_rule.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"force_destroy": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"grant.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"hosted_zone_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"logging.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"object_lock_configuration.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"object_lock_enabled": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"region": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"replication_configuration.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"request_payer": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"server_side_encryption_configuration.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"versioning.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"website.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"website_domain": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"website_endpoint": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_s3_bucket_policy": {
+				"Ellventestssakvnkasicsk19230dklsc": {
+					0: {
+						"applied": {
+							"policy": "{\"Id\":\"S3-Console-Auto-Gen-Policy-1670678796275\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"arn:aws:iam::891189580005:root\",\"arn:aws:iam::875537689616:root\",\"arn:aws:iam::555625778301:root\"]},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\"},{\"Action\":\"s3:GetBucketAcl\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::kucoin-cloudtrail-central\",\"Sid\":\"AWSCloudTrailAclCheck20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailWrite20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailS3Write20131101\"},{\"Action\":[\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::892535148939:role/arron\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"AWSCloudTrailReadOnly20230506\"}],\"Version\":\"2012-10-17\"}",
+						},
+						"destroy": false,
+						"diff": {
+							"bucket": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy": {
+								"computed": false,
+								"new":      "{\"Id\":\"S3-Console-Auto-Gen-Policy-1670678796275\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"arn:aws:iam::891189580005:root\",\"arn:aws:iam::875537689616:root\",\"arn:aws:iam::555625778301:root\"]},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"S3PolicyStmt-DO-NOT-MODIFY-1670678792895\"},{\"Action\":\"s3:GetBucketAcl\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::kucoin-cloudtrail-central\",\"Sid\":\"AWSCloudTrailAclCheck20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/management-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/management-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/management-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailWrite20131101\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"aws:SourceArn\":[\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-write-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:875537689616:trail/s3-events-read-875537689616\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-write-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:555625778301:trail/s3-events-read-555625778301\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-write-891189580005\",\"arn:aws:cloudtrail:ap-northeast-1:891189580005:trail/s3-events-read-891189580005\"],\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudtrail.amazonaws.com\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central/s3write/AWSLogs/*\",\"arn:aws:s3:::kucoin-cloudtrail-central/s3read/AWSLogs/*\"],\"Sid\":\"AWSCloudTrailS3Write20131101\"},{\"Action\":[\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::892535148939:role/arron\"},\"Resource\":[\"arn:aws:s3:::kucoin-cloudtrail-central\",\"arn:aws:s3:::kucoin-cloudtrail-central/*\"],\"Sid\":\"AWSCloudTrailReadOnly20230506\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"mytestssakvnkasicsk19230dklsc": {
+					0: {
+						"applied": {
+							"bucket": "mytestssakvnkasicsk19230dklsc",
+							"id":     "mytestssakvnkasicsk19230dklsc",
+							"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+						},
+						"destroy": false,
+						"diff": {
+							"bucket": {
+								"computed": false,
+								"new":      "mytestssakvnkasicsk19230dklsc",
+								"old":      "mytestssakvnkasicsk19230dklsc",
+							},
+							"id": {
+								"computed": false,
+								"new":      "mytestssakvnkasicsk19230dklsc",
+								"old":      "mytestssakvnkasicsk19230dklsc",
+							},
+							"policy": {
+								"computed": false,
+								"new":      "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":[\"s3:GetBucketVersioning\",\"s3:PutBucketVersioning\",\"s3:ReplicateObject\",\"s3:ReplicateDelete\"],\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.4.6"
+
+variables = {
+	"aws":                      "ap-east-1",
+	"aws_region":               "ap-east-1",
+	"awsvpc_service_subnetids": [],
+	"region":                   "ap-east-1",
+}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources

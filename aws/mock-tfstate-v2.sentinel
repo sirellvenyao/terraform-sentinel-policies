@@ -1,0 +1,95 @@
+terraform_version = "1.4.6"
+
+outputs = {}
+
+resources = {
+	"aws_s3_bucket.mytestssakvnkasicsk19230dklsc": {
+		"address":        "aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+		"depends_on":     [],
+		"deposed_key":    "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "mytestssakvnkasicsk19230dklsc",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"tainted":        false,
+		"type":           "aws_s3_bucket",
+		"values": {
+			"acceleration_status": null,
+			"acl":                         null,
+			"arn":                         "arn:aws:s3:::mytestssakvnkasicsk19230dklsc",
+			"bucket":                      "mytestssakvnkasicsk19230dklsc",
+			"bucket_domain_name":          "mytestssakvnkasicsk19230dklsc.s3.amazonaws.com",
+			"bucket_prefix":               "",
+			"bucket_regional_domain_name": "mytestssakvnkasicsk19230dklsc.s3.ap-east-1.amazonaws.com",
+			"cors_rule":                   [],
+			"force_destroy":               false,
+			"grant": [
+				{
+					"id": "dfcf04ef71fe7a1416532c4386ee96c670b587350964da9dc0ce89507a24e81e",
+					"permissions": [
+						"FULL_CONTROL",
+					],
+					"type": "CanonicalUser",
+					"uri":  "",
+				},
+			],
+			"hosted_zone_id":            "ZNB98KWMFR0R6",
+			"id":                        "mytestssakvnkasicsk19230dklsc",
+			"lifecycle_rule":            [],
+			"logging":                   [],
+			"object_lock_configuration": [],
+			"object_lock_enabled":       false,
+			"policy":                    "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+			"region":                    "ap-east-1",
+			"replication_configuration": [],
+			"request_payer":             "BucketOwner",
+			"server_side_encryption_configuration": [
+				{
+					"rule": [
+						{
+							"apply_server_side_encryption_by_default": [
+								{
+									"kms_master_key_id": "",
+									"sse_algorithm":     "AES256",
+								},
+							],
+							"bucket_key_enabled": false,
+						},
+					],
+				},
+			],
+			"tags":     {},
+			"tags_all": {},
+			"timeouts": null,
+			"versioning": [
+				{
+					"enabled":    false,
+					"mfa_delete": false,
+				},
+			],
+			"website":          [],
+			"website_domain":   null,
+			"website_endpoint": null,
+		},
+	},
+	"aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc": {
+		"address": "aws_s3_bucket_policy.mytestssakvnkasicsk19230dklsc",
+		"depends_on": [
+			"aws_s3_bucket.mytestssakvnkasicsk19230dklsc",
+		],
+		"deposed_key":    "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "mytestssakvnkasicsk19230dklsc",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"tainted":        false,
+		"type":           "aws_s3_bucket_policy",
+		"values": {
+			"bucket": "mytestssakvnkasicsk19230dklsc",
+			"id":     "mytestssakvnkasicsk19230dklsc",
+			"policy": "{\"Id\":\"MYBUCKETPOLICY\",\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"8.8.8.8/32\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":\"arn:aws:s3:::mytestssakvnkasicsk19230dklsc/*\",\"Sid\":\"IPAllow\"}],\"Version\":\"2012-10-17\"}",
+		},
+	},
+}
